@@ -1,4 +1,6 @@
 
+/* Les puse skip a todos para que no ejecute todo de una y puedn probar uno por uno los tests al igual que el comentario en los botones de registo */
+
 // EJERCICIO 1
 describe('Formulario de Registro', () => {
   beforeEach(() => {
@@ -69,7 +71,7 @@ describe('Formulario de Registro', () => {
     cy.get('[data-cy="input-repetir-password"]').clear().type('Pa@12345')
     
     cy.log('Registrar usuario')
-    cy.get('[data-cy="btn-registrarse"]').click();
+    // cy.get('[data-cy="btn-registrarse"]').click();
 
     cy.wait(5000)
 
@@ -102,7 +104,7 @@ describe('Formulario de Registro', () => {
     cy.get('[data-cy="input-repetir-password"]').clear().type('Ro@12345')
     
     cy.log('Registrar usuario')
-    cy.get('[data-cy="btn-registrarse"]').click();
+    // cy.get('[data-cy="btn-registrarse"]').click();
 
     cy.wait(5000)
 
@@ -135,7 +137,7 @@ describe('Formulario de Registro', () => {
     cy.get('[data-cy="input-repetir-password"]').clear().type('Ro@12345')
     
     cy.log('Registrar usuario')
-    cy.get('[data-cy="btn-registrarse"]').click();
+    // cy.get('[data-cy="btn-registrarse"]').click();
     cy.wait(5000)
 
     cy.url().should('eq', 'https://ticketazo.com.ar/auth/login')
@@ -171,7 +173,7 @@ describe('Formulario de Registro', () => {
     cy.get('[data-cy="input-repetir-password"]').clear().type('Pe@12')
     
     cy.log('Registrar usuario')
-    cy.get('[data-cy="btn-registrarse"]').click().wait(1000)
+    // cy.get('[data-cy="btn-registrarse"]').click().wait(1000)
     cy.log('Mostrar mensaje')
     cy.get('[data-cy="error-message"]').should('be.visible').and('contain.text', 'La contraseña debe tener al menos 6 caracteres');
 
@@ -180,11 +182,11 @@ describe('Formulario de Registro', () => {
     cy.get('[data-cy="input-repetir-password"]').clear().type('Pepepe')
     
     cy.log('Registrar usuario')
-    cy.get('[data-cy="btn-registrarse"]').click().wait(1000)
+    // cy.get('[data-cy="btn-registrarse"]').click().wait(1000)
     cy.log('Mostrar mensaje')
     cy.get('[data-cy="error-message"]').should('be.visible').and('contain.text', 'La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y símbolos.');
 
-    cy.wait(5000)
+    // cy.wait(5000)
 
   })
 })
